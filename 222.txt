@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Table with Different Row and Column Sizes</title>
+<style>
+  table {
+    width: 100vw; /* Займати 100% ширини видимого вікна */
+    height: 100vh; /* Займати 100% висоти видимого вікна */
+    border-collapse: collapse;
+  }
+  td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+  }
+  .red { background-color: red; }
+  .blue { background-color: blue; }
+  .yellow { background-color: yellow; }
+  .pink { background-color: pink; }
+  .white { background-color: white; }
+  
+  .header, .footer {
+    grid-column: 1 / -1;
+    height: 50px; /* Fixed height as per template */
+  }
+  
+  .wide { grid-column: span 2; }
+  .tall { grid-row: span 2; }
+
+  .password-input {
+    grid-column: 3 / -1;
+    grid-row: 4 / 6;
+    padding: 0 10px;
+  }
+  
+  .background-image-ready { /* Placeholder for background image */
+    background-image: url('istockphoto-508945700-612x612.webp');
+    background-size: cover;
+  }
+
+  .hyperlink {
+    text-decoration: none;
+    color: black;
+  }
+
+  .list {
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li::before {
+    content: "• ";
+    color: black;
+  }
+  
+  ol {
+    padding-left: 20px;
+  }
+
+  ol li {
+    list-style-type: decimal;
+  }
+
+  button, input[type='text'] {
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .blue-box, .yellow-box, .pink-box { /* Additional classes for colored boxes */
+    height: 100px; /* Fixed height for color boxes */
+  }
+
+  .bold-underline {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
+  .full-cell {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td class="white"></td>
+    <td colspan="2" class="hyperlink"><a href="https://uk.wikipedia.org/wiki/%D0%91%D1%96%D0%BB%D0%B8%D0%B9_%D1%82%D0%B8%D0%B3%D1%80" target="_blank">Білі тигри</a></td>
+    <td rowspan="2">
+      <ul class="list">
+        <li class="underline">Реклама</li>
+        <li>Медіа</li>
+        <li>Бізнес</li>
+      </ul>
+    </td>
+    <td rowspan="2"class="hyperlink"><a href="https://uk.wikipedia.org/wiki/%D0%A0%D0%B8%D1%81%D1%8C_%D1%94%D0%B2%D1%80%D0%B0%D0%B7%D1%96%D0%B9%D1%81%D1%8C%D0%BA%D0%B0" target="_blank">Рись євразійська</a></td>
+  </tr>
+  <tr>
+    <td class="hyperlink"><a href="https://uk.wikipedia.org/wiki/%D0%A4%D0%B0%D1%83%D0%BD%D0%B0_%D0%90%D0%B7%D1%96%D1%97">Фауна Азії</a></td>
+    <td class="red"></td>
+    <td class="white"></td>
+  </tr>
+  <tr>
+    <td class="pink"></td>
+    <td colspan="2">Я студент ХНЕУ</td>
+    <td colspan="2" class="password-input">
+      <input type="text" placeholder="Введіть пароль">
+      <button>Введіть пароль</button>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="3">
+      <ol class="list" start="13">
+        <li>Реклама</li>
+        <li class="bold-underline">Медіа</li>
+        <li>Бізнес</li>
+      </ol>
+    </td>
+    <td class="blue"></td>
+    <td class="white"></td>
+    <td rowspan="3" colspan="2" class="background-image-ready"></td>
+  </tr>
+   <tr>
+    <td class="white"></td>
+    <td rowspan="2" class="yellow"></td>
+  </tr>
+  <tr>
+    <td>© 2024</td>
+  </tr>
+</table>
+
+</body>
+</html>
